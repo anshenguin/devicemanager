@@ -188,21 +188,17 @@ int macMatcher=0;
            String slash="\\";
            String s=new StringBuilder(str).append(slash).toString();
            Path dir=Paths.get(s);
-           String ext[]={"doc","docx","odt","pfd","txt"};
+           String ext[]={"doc","docx","odt","pdf","txt"};
            files fil = new files();
            
-           finder check=fil.new finder("");
+           finder check=fil.new finder("txt");
            
            try {
                 Files.walkFileTree(dir, check);
             } catch (Exception ex) {
                System.out.println(ex.getMessage());
             }
-            try {
-                check.done();
-            } catch (Throwable ex) {
-               System.out.println(ex.getMessage());
-            }
+            
            }
                   
                }
